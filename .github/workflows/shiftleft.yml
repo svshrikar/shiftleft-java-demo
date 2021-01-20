@@ -48,7 +48,7 @@ jobs:
       run: |
         ${GITHUB_WORKSPACE}/sl check-analysis --app shiftleft-java-demo \
             --branch "${{ github.head_ref || steps.extract_branch.outputs.branch }}" \
-            --report \
+            --target app.branch="${{ github.head_ref || steps.extract_branch.outputs.branch }}" \
             --github-pr-number=${{github.event.number}} \
             --github-pr-user=${{ github.repository_owner }} \
             --github-pr-repo=${{ github.event.repository.name }} \
